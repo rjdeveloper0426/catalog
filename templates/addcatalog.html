@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<form action = "{{url_for('addCatalog')}}" method="post">
+		<label>
+			New Catalog:
+			<input type="text" name="name" />
+			<input type="submit" value="Add Catalog" />
+		</label>
+	</form>
+
+{% endblock content %}

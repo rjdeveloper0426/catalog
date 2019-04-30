@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<div class = 'flash'>
+		{% with messages = get_flashed_messages() %}
+	    	{% if messages %}          
+		        <ul>
+			        {% for message in messages %}
+			            <li><strong>{{ message }}</strong></li>
+			        {% endfor %}
+		        </ul>
+	    	{% endif %}
+	    {% endwith %}
+	</div>	
+	<hr />
+	<div>				
+		{% for catalog in catalogs %}
+			<h3><a href='{{url_for('item', catalog_id = catalog.id)}}'>{{catalog.name}}</a></h3>
+			<a href='{{url_for('editCatalog', catalog_id = catalog.id)}}'>Edit</a>
+			|
+			<a href='{{url_for('deleteCatalog', catalog_id = catalog.id)}}'>Delete</a>
+			<br>
+			<br>
+		{% endfor %}
+	</div>
+	
+{% endblock content %}

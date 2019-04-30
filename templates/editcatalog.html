@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+	<form action = "{{url_for('editCatalog', catalog_id = catalog.id)}}" method = 'POST'>
+		<p>Name:</p>
+		<input type = 'text' size='30' name = 'name' placeholder = '{{catalog.name}}'>
+		<input type='submit' value='Edit'>
+	</form>
+	<a href= '/catalog'>Cancel</a>
+{% endblock content %}

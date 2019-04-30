@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+	<hr />
+	<h1>{{catalog_id.name}} Items:</h1>
+	<br>
+	<br>
+	<ul>
+		{% for item in items %}
+			<h3>{{item.name}}</h3> 
+			<p>{{item.description}}</p>
+			</br>
+			</br>
+		{% endfor %}
+	</ul>
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h3> Are you sure you want to delete "{{catalog.name}} catalog"? </h3>
+	<form action = "{{url_for('deleteCatalog', catalog_id = catalog.id)}}" method = 'post'>
+		<input type='submit', value = 'Delete'>
+	</form>
+	<a href = '/catalog'>Cancel</a>
+{% endblock content %}
